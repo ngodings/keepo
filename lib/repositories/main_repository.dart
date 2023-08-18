@@ -16,11 +16,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:keepo/services/permission_handler.dart';
 import 'package:keepo/services/set_secure_storage_data.dart';
 import 'package:keepo/services/socket_service.dart';
-import 'package:keepo/utils/app_routes.dart';
+
 import 'package:keepo/utils/string.dart';
 
 import '../services/dio_service.dart';
 import '../services/navigation.dart';
+import '../utils/app/app_routes.dart';
 
 class MainRepository {
   MainRepository() {
@@ -29,32 +30,8 @@ class MainRepository {
 }
 
 _init() async {
-  final isLoggedIn = await setConfig('id');
-  //initUniLinks();
-  await Future.delayed(const Duration(seconds: 2));
-
-  if (isLoggedIn) {
-    //check blocked things
-
-    final statusAccount =
-        await GetIt.I<FlutterSecureStorage>().read(key: statusAccountUser);
-
-    if (statusAccount == 'block') {
-      signOut();
-    }
-
-    GetIt.I<NavigationServiceMain>().pushRemoveUntil(AppRoutes.homePage);
-  } else {
-    // try {
-    //   // await determinePosition();
-    //   // await SetSecureStorageData().setCurrentLocation();
-    // } catch (e) {
-    //   debugPrint("LOCATION PERMISSION ERROR $e");
-    // }
-    // if (allPermissionsGranted) {
-    GetIt.I<NavigationServiceMain>().pushReplacementNamed(AppRoutes.onBoarding);
-    // }
-  }
+  await Future.delayed(const Duration(seconds: 1));
+  GetIt.I<NavigationServiceMain>().pushRemoveUntil(AppRoutes.introduce);
 }
 
 Future<bool> setConfig(String lang) async {
@@ -168,8 +145,8 @@ void signOut() async {
   final result =
       await GetIt.I<FlutterSecureStorage>().read(key: dialCodeStorage);
   await GetIt.I<FlutterSecureStorage>().deleteAll();
-  await GetIt.I<NavigationServiceMain>()
-      .pushRemoveUntil(AppRoutes.login, args: {'initialCode': result ?? ''});
+  // await GetIt.I<NavigationServiceMain>()
+  //     .pushRemoveUntil(AppRoutes.login, args: {'initialCode': result ?? ''});
 }
 
 // NEED CLEAN CODE SOOOOOOOOOOOOOOOOOOOOON

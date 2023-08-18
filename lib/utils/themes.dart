@@ -256,6 +256,7 @@ const Color c1C2429 = Color(0xFF1C2429);
 const Color c171E23 = Color(0xFF171E23);
 const Color c222B31 = Color(0xFF222B31);
 const Color cFF8686 = Color(0xFFFF8686);
+const Color c4D3C77 = Color(0xFF4D3C77);
 
 final service = GetIt.I<NavigationServiceMain>();
 

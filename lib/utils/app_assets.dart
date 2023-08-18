@@ -181,7 +181,7 @@ class AppImages {
   static const defaultProfile = 'assets/images/default-profile-1.png';
   static const defaultServices = 'assets/images/img_placeholder_service.png';
   static const bgMembershipTiers = "assets/images/bg_membership_tiers.png";
-  static const splashLogo = "assets/images/logo-keepo.png";
+
   static const keepoWithText = "assets/images/keepo_with_text.png";
   static const bgSplash = 'assets/images/bg-splash.png';
   static const buttonOnboardLocationPermission =

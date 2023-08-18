@@ -12,7 +12,7 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:keepo/app/routes.dart';
 import 'package:keepo/services/notification_services.dart';
 
-import '../screen/page/splash_screen.dart';
+import '../features/splash/splash_screen.dart';
 import '../services/dio_service.dart';
 import '../services/navigation.dart';
 import '../utils/themes.dart';

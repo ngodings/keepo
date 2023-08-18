@@ -7,7 +7,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get_it/get_it.dart';
 import 'package:keepo/helper/base_response.dart';
-import 'package:keepo/screen/components/country_list/support/code_countries_en.dart';
+import 'package:keepo/features/components/country_list/support/code_countries_en.dart';
 import 'package:keepo/services/permission_handler.dart';
 import 'package:keepo/utils/string.dart';
 

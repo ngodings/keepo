@@ -1,10 +1,11 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:keepo/features/intro/introduction_screen.dart';
+import 'package:keepo/utils/app/app_routes.dart';
 
-import '../screen/page/home_page.dart';
-import '../screen/page/splash_screen.dart';
-import '../utils/app_routes.dart';
+import '../features/splash/home_page.dart';
+import '../features/splash/splash_screen.dart';
 
 void configureRoutes() {
   final router = GetIt.I<FluroRouter>();
@@ -15,24 +16,37 @@ void configureRoutes() {
   );
 
   // On Boarding
+
   router.define(
-    AppRoutes.homePage,
+    AppRoutes.introduce,
     handler: Handler(
         handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-      final args = context?.arguments != null
-          ? context?.arguments as Map<String, dynamic>
-          : null;
-      return HomePage();
+      // final args = context?.arguments != null
+      //     ? context?.arguments as Map<String, dynamic>
+      //     : null;
+      return IntroductionScreen();
     }),
     transitionType: TransitionType.fadeIn,
   );
 
-  router.define(
-    AppRoutes.splashScreen,
-    handler: Handler(
-      handlerFunc: (BuildContext? context, Map<String, List<String>> params) =>
-          const SplashScreen(),
-    ),
-    transitionType: TransitionType.fadeIn,
-  );
+  // router.define(
+  //   AppRoutes.homePage,
+  //   handler: Handler(
+  //       handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+  //     final args = context?.arguments != null
+  //         ? context?.arguments as Map<String, dynamic>
+  //         : null;
+  //     return const HomePage();
+  //   }),
+  //   transitionType: TransitionType.fadeIn,
+  // );
+
+  // router.define(
+  //   AppRoutes.splashScreen,
+  //   handler: Handler(
+  //     handlerFunc: (BuildContext? context, Map<String, List<String>> params) =>
+  //         const SplashScreen(),
+  //   ),
+  //   transitionType: TransitionType.fadeIn,
+  // );
 }

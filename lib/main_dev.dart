@@ -32,6 +32,7 @@ import 'app/main.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   // await Firebase.initializeApp();
 
   // AndroidNotificationChannel androidChannel = const AndroidNotificationChannel(
