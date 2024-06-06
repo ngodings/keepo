@@ -18,7 +18,6 @@ import 'package:keepo/utils/string.dart';
 import 'package:keepo/utils/themes.dart';
 
 import 'app/main.dart';
-import 'composition_root.dart';
 
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {

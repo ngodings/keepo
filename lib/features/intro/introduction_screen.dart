@@ -87,7 +87,7 @@ class IntroductionScreen extends StatelessWidget {
     PageModel.withChild(
       child: Column(
         children: [
-          Gap(35.h),
+          Gap(10.h),
           Lottie.asset(AppLottie.animation1),
           ValueTextWidget(
             text: "Crafting Memorable Things with Friends",
